@@ -1,20 +1,32 @@
 import pygame, typing # type: ignore  # noqa: E401
 pygame.init()
+lists=typing.TypeVar('lists',list,tuple)
 num=typing.TypeVar('num',int,float)
 
 #i srsly dont konow how to code classes
 #ow to use git efficiently vro 🥀💔
 
 class Obj:
-    def rect(initpos:tuple[num,num],width:num,height:num,color:tuple[num,num,num]=(0,0,0))->list:
+    def __init__(self,name:str) -> None:
+        '''creates name for obj and puts it in a dictionary
+        \nplease fucking use this for gravity PLESAE'''
+        self.obj={}
+        self.obj[name]=None
+    def rect(self,initpos:lists[num,num],width:num,height:num,color:lists[num,num,num]=(0,0,0),name:str=None):
         '''creates new rect obj, center will be positioned at middle of rect
-        idk lmao'''
+        \nif there is name, it MUST match the name you used when initiating the object'''
         holder=pygame.Rect((width,height),initpos)
         holder.center=initpos
         holderreal=[color,holder]
-        return holderreal
+        if name:
+            if name in self.obj:
+                self.obj[name]=holderreal
+            else:
+                raise AttributeError("nuh uh, did it match yet?")
+        else:
+            return holderreal
     class circle:
-        def __init__(center:tuple,radius:num,color) -> None:
+        def __init__(center:lists,radius:num,color) -> None:
 
             pass
 
@@ -34,7 +46,8 @@ class Gravity:
 
 scr=pygame.display.set_mode([960, 720])
 run=1
-test=Obj.rect((100,100),50j,50j)
+test=Obj('ok')
+test=Obj.rect()
 cirtest=pygame.draw.circle(scr,[0,0,255],(100,100),25) #does not yield rect as circle
 print(test,test[1].center,cirtest)
 
