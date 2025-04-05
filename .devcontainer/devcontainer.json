@@ -8,5 +8,23 @@
 			"webPort": "6080",
 			"vncPort": "5901"
 		}
+	},
+	"forwardPorts": [6080],
+	"portsAttributes": {
+	  "6080": {
+		"label": "desktop"
+	  }
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"GitHub.copilot",
+				"GitHub.copilot-chat",
+				"ms-python.vscode-pylance",
+				"ms-python.python",
+				"ms-python.debugpy",
+				"charliermarsh.ruff"
+			]
+		}
 	}
 }
