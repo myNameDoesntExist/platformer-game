@@ -42,8 +42,8 @@ class Gravity:
 
 scr=pygame.display.set_mode([960, 720])
 run=1
-#test=Obj('ok')
-#test=Obj.rect()
+test=Obj('ok')
+test=Obj.rect(test,[100,100],50,50,[0,0,255],'ok') #initpos,width,height,color,name
 #cirtest=pygame.draw.circle(scr,[0,0,255],(100,100),25) #does not yield rect as circle
 #print(test,test[1].center,cirtest)
 
