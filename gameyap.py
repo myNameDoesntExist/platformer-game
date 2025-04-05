@@ -11,7 +11,7 @@ class Obj:
         '''creates name for obj and puts it in a dictionary'''
         self.obj={}
         self.obj[name]=None
-    def rect(self,initpos:lists,width:num,height:num,color:lists,name):
+    def rect(self,initpos,width:num,height:num,color:lists,name):
         '''uses name (bc its easier to code lmao), it MUST match the name you used when initiating the object'''
         holder=pygame.Rect((width,height),initpos)
         holder.center=initpos
@@ -21,6 +21,10 @@ class Obj:
                 self.obj[name]=holderreal
             else:
                 raise AttributeError("nuh uh, did it match yet?")
+    def draw(self):
+        '''draws the objects in the dictionary YIPPEE'''
+        for i in self.obj:
+            pygame.draw.rect(scr,*self.obj[i])
     class circle:
         def __init__(center:lists,radius:num,color) -> None:
 
