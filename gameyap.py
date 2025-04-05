@@ -10,8 +10,7 @@ class Obj:
     def __init__(*args:str,var) -> None:
         '''creates name for obj and puts it in a dictionary
         \nneeds var to know which variable to use'''
-        var={}
-        var={_:None _ for _ in *args }
+        var={_:None for _ in args }
     def rect(initpos,width:num,height:num,color:lists,name:str,var):
         '''uses name (bc its easier to code lmao), it MUST match the name you used when initiating the object
         \nneeds var to know which variable to use'''
